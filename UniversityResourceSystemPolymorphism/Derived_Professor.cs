@@ -7,6 +7,12 @@ public class Derived_Professor : UniversityMember
     public override void  PerformDuties()  // Activate ункція яку має кожен юніверсіть мембер 
     {
         base.PerformDuties();
-        Console.WriteLine("Lecture delivered");
+        ActionLog.Add("Lecture delivered");
+        Console.WriteLine( $"Lecture {Name} delivered");
+    }
+
+    public void ConductResearch(string topic)
+    {
+        Console.WriteLine( $"Lecture {Name} research for {topic}");
     }
 }

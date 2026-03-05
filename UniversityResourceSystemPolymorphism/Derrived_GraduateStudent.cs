@@ -7,6 +7,7 @@ public class Derrived_GraduateStudent : Derrived_UndergraduateStudent
     public override void  PerformDuties()  // Activate ункція яку має кожен юніверсіть мембер 
     {
         base.PerformDuties();
+        ActionLog.Add("Lecture delivered");
         Console.WriteLine("Lecture delivered");
     }
 }

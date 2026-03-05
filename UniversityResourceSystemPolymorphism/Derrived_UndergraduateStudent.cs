@@ -7,6 +7,8 @@ public class Derrived_UndergraduateStudent : UniversityMember
     public override void  PerformDuties()  // Activate ункція яку має кожен юніверсіть мембер 
     {
         Isworking = true;
-        Console.WriteLine("Lab work completed");
+        base.PerformDuties();
+        ActionLog.Add("Lab work completed");
+        Console.WriteLine("Students completed lab work");
     }
 }

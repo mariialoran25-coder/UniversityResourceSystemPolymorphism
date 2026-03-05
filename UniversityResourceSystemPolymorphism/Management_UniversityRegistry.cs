@@ -14,8 +14,14 @@ public class Management_UniversityRegistry
         }
     }
 
-    public Management_UniversityRegistry()
+    public void GetMemberStatistics()
     {
-        members.ForEach(member => member.PerformDuties());
+        int totalAction =0;
+        foreach (var member in members)
+        {
+            totalAction += member.ActionCount();
+        }
+        Console.WriteLine(totalAction);
+        
     }
 }

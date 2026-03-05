@@ -3,7 +3,7 @@
 public class UniversityMember
 {
     private string _name;
-    private string Name 
+    public string Name 
     {
         get => _name;
         set => _name = string.IsNullOrEmpty(value) ?
@@ -13,7 +13,7 @@ public class UniversityMember
     public string MemberId { get; }
     protected  bool Isworking { get; set; }
     
-    protected List<string> ActionLog = new List<string>();  //Для відстеження виконаних обов'язків  To track performed duties
+    protected List<string> ActionLog = new List<string>();  
 
     public UniversityMember(string name, string id)
     {
@@ -23,9 +23,14 @@ public class UniversityMember
     public virtual void PerformDuties()
     {
         Isworking = true;
-        if (ActionLog.Count == 5)
+        if (ActionLog.Count >= 5)
         {
             throw new Exception("You are reached a daily limit of 5 actions");
         }
+    }
+
+    public int ActionCount()
+    {
+        return ActionLog.Count;
     }
 }
